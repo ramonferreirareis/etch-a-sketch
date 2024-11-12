@@ -12,4 +12,4 @@ function createGrid(number) {
         }
     }  
 }
-createGrid(5);
+createGrid(16);

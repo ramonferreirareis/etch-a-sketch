@@ -3,9 +3,16 @@
     padding: 0;
 }
 
+.row {
+    border-top: solid 1px black;
+    height: 6.25%;
+    display: flex;
+    flex-direction: row;
+}
+
 .square {
-    background-color: black;
-    width: 10px;
+    border: solid 1px black;
+    flex-basis: 6.25%;
 }
 
 #canvas {
@@ -13,7 +20,4 @@
     width: 500px;
     height: 500px;
 
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
