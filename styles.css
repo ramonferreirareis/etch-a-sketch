@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    background-color: black;
+    width: 10px;
+}
+
+#canvas {
+    border: 1px solid green;
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
