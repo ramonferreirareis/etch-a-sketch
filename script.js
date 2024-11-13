@@ -24,13 +24,16 @@ function createGrid(number) {
     })
 }
 
-createGrid(16);
-
 const slider = document.querySelector("#myRange");
 const output = document.querySelector("#value");
 
 output.textContent = slider.value;
 
 slider.oninput = function() {
-    output.textContent = this.value;
+    const value = this.value;
+    output.textContent = value;
+    createGrid(value);
 }
+
+createGrid(16);
+
