@@ -1,7 +1,5 @@
 const canvas = document.querySelector("#canvas")
 
-
-
 function createGrid(number) {
     for (let i = 0; i < number; i++) {
         const divRow = document.createElement("div");
@@ -25,4 +23,14 @@ function createGrid(number) {
         })
     })
 }
+
 createGrid(16);
+
+const slider = document.querySelector("#myRange");
+const output = document.querySelector("#value");
+
+output.textContent = slider.value;
+
+slider.oninput = function() {
+    output.textContent = this.value;
+}
