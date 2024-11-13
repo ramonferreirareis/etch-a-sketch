@@ -1,6 +1,7 @@
 const canvas = document.querySelector("#canvas")
 
 function createGrid(number) {
+    canvas.textContent = "";
     for (let i = 0; i < number; i++) {
         const divRow = document.createElement("div");
         divRow.classList.add("row");
@@ -20,6 +21,12 @@ function createGrid(number) {
             if (event.buttons === 1) {
                 square.classList.add("color");
             }
+        })
+    })
+
+    squareCells.forEach(square => {
+        square.addEventListener("click", () => {
+            square.classList.add("color");
         })
     })
 }
