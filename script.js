@@ -18,8 +18,8 @@ function createGrid(number) {
     const squareCells = document.querySelectorAll(".square");
 
     squareCells.forEach(square => {
-        square.addEventListener("mouseover", evt => {
-            if (evt.buttons === 1) {
+        square.addEventListener("mouseover", event => {
+            if (event.buttons === 1) {
                 square.classList.add("color");
             }
         })
