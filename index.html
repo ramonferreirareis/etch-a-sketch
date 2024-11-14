@@ -8,7 +8,14 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="canvas"></div>
+    <div class="canvas-container">
+        <div id="canvas"></div>
+        <div class="color-container">
+            <div class="colorSquare" id="black"></div>
+            <div class="colorSquare" id="white"></div>
+            <div class="colorSquare" id="blue"></div>
+        </div>
+    </div>
     <div class="slidercontainer">
         <input type="range" min="4" max="100" value ="4" class="slider" id="myRange">
         <p>Grid size: <span id="value"></span></p>

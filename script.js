@@ -14,21 +14,29 @@ function createGrid(number) {
             
         }
     }  
-    const squareCells = document.querySelectorAll(".square");
+    // getColor("black");
+  
+    const getColorWhite = document.querySelector("#white");
+    const getColorBlack = document.querySelector("#black");
+    const getColorBlue = document.querySelector("#blue");
 
-    squareCells.forEach(square => {
-        square.addEventListener("mouseover", event => {
-            if (event.buttons === 1) {
-                square.classList.add("color");
-            }
-        })
+    getColorBlue.addEventListener("click", () => {
+        getColor("blue");
+
     })
 
-    squareCells.forEach(square => {
-        square.addEventListener("click", () => {
-            square.classList.add("color");
-        })
+    getColorBlack.addEventListener("click", () => {
+        getColor("black");
+
     })
+    
+    getColorWhite.addEventListener("click", () => {
+        getColor("white");
+
+    })
+
+
+
 }
 
 const slider = document.querySelector("#myRange");
@@ -43,4 +51,21 @@ slider.oninput = function() {
 }
 
 createGrid(4);
+
+function getColor(color) {
+    const squareCells = document.querySelectorAll(".square");
+    squareCells.forEach(square => {
+        square.addEventListener("pointerover", event => {
+            if (event.buttons === 1) {
+                square.style.backgroundColor = color;
+            }
+        })
+    })
+
+    squareCells.forEach(square => {
+        square.addEventListener("click", () => {
+            square.style.backgroundColor = color;
+        })
+    })
+}
 

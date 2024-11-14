@@ -19,6 +19,7 @@ body {
 
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 .row {
@@ -30,15 +31,11 @@ body {
     flex: 1;
 }
 
-
-.color {
-    background-color: black;
-}
-
 /* SLIDER */
 
 .slidercontainer {
     width: 500px;
+    align-self: center;
 }
 
 .slider {
@@ -50,6 +47,8 @@ body {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+
+    
 }
 
 .slider:hover {
@@ -58,6 +57,7 @@ body {
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance: none;
     width: 25px;
     height: 25px;
     background-color: red
@@ -67,4 +67,33 @@ p {
     text-align: center;
     font-size: 36px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* COLORS */
+.canvas-container {
+    display: flex;
+    gap: 50px;
+}
+
+.color-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.colorSquare {
+    height: 50px;
+    width: 50px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+#black
+{
+    background-color: black;
+}
+
+
+#blue{
+    background-color: rgb(117, 180, 252);
 }
