@@ -14,16 +14,12 @@ function createGrid(number) {
             
         }
     }  
-    // getColor("black");
-  
+    
     const getColorWhite = document.querySelector("#white");
     const getColorBlack = document.querySelector("#black");
-    const getColorBlue = document.querySelector("#blue");
-
-    getColorBlue.addEventListener("click", () => {
-        getColor("blue");
-
-    })
+    const getColorRainbow = document.querySelector("#rainbow");
+    
+    getColor("black");
 
     getColorBlack.addEventListener("click", () => {
         getColor("black");
@@ -34,6 +30,11 @@ function createGrid(number) {
         getColor("white");
 
     })
+
+    getColorRainbow.addEventListener("click", () => {
+        getColor(getRandomColor());
+    })
+
 
 
 
@@ -57,15 +58,28 @@ function getColor(color) {
     squareCells.forEach(square => {
         square.addEventListener("pointerover", event => {
             if (event.buttons === 1) {
-                square.style.backgroundColor = color;
+                if (color === "black" || color === "white") {
+                    square.style.backgroundColor = color;
+                } else {
+                    square.style.backgroundColor = getRandomColor();
+                }
             }
         })
     })
 
     squareCells.forEach(square => {
         square.addEventListener("click", () => {
-            square.style.backgroundColor = color;
+            if (color === "black" || color === "white") {
+                square.style.backgroundColor = color;
+            } else {
+                square.style.backgroundColor = getRandomColor();
+            }
         })
     })
+}
+
+function getRandomColor() {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return "#" + randomColor;
 }
 
