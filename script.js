@@ -42,5 +42,5 @@ slider.oninput = function() {
     createGrid(value);
 }
 
-createGrid(16);
+createGrid(4);
 
