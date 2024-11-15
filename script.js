@@ -23,7 +23,7 @@ function createGrid(number) {
 
     getColorBlack.addEventListener("click", () => {
         getColor("black");
-
+        
     })
     
     getColorWhite.addEventListener("click", () => {
@@ -55,9 +55,16 @@ createGrid(4);
 
 function getColor(color) {
     const squareCells = document.querySelectorAll(".square");
+    let opacity = 0.1;
+
+    
+
     squareCells.forEach(square => {
         square.addEventListener("pointerover", event => {
             if (event.buttons === 1) {
+                square.style.opacity = opacity;
+                opacity += 0.1;
+
                 if (color === "black" || color === "white") {
                     square.style.backgroundColor = color;
                 } else {
@@ -69,6 +76,9 @@ function getColor(color) {
 
     squareCells.forEach(square => {
         square.addEventListener("click", () => {
+            square.style.opacity = opacity;
+            opacity += 0.1;
+
             if (color === "black" || color === "white") {
                 square.style.backgroundColor = color;
             } else {
