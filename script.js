@@ -34,10 +34,6 @@ function createGrid(number) {
     getColorRainbow.addEventListener("click", () => {
         getColor(getRandomColor());
     })
-
-
-
-
 }
 
 const slider = document.querySelector("#myRange");
@@ -55,11 +51,9 @@ createGrid(4);
 
 function getColor(color) {
     const squareCells = document.querySelectorAll(".square");
-    let opacity = 0.1;
-
     
-
     squareCells.forEach(square => {
+        let opacity = 0.1;
         square.addEventListener("pointerover", event => {
             if (event.buttons === 1) {
                 square.style.opacity = opacity;
@@ -75,10 +69,11 @@ function getColor(color) {
     })
 
     squareCells.forEach(square => {
+        let opacity = 0.1;
         square.addEventListener("click", () => {
             square.style.opacity = opacity;
             opacity += 0.1;
-
+            
             if (color === "black" || color === "white") {
                 square.style.backgroundColor = color;
             } else {
