@@ -20,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
 
 .row {
@@ -35,7 +36,6 @@ body {
 
 .slidercontainer {
     width: 500px;
-    align-self: center;
 }
 
 .slider {
