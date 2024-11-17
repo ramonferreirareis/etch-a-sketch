@@ -1,4 +1,5 @@
 const canvas = document.querySelector("#canvas")
+let isRainbow = false;
 
 function createGrid(number) {
     canvas.textContent = "";
@@ -18,22 +19,32 @@ function createGrid(number) {
     const getColorWhite = document.querySelector("#white");
     const getColorBlack = document.querySelector("#black");
     const getColorRainbow = document.querySelector("#rainbow");
+    const getColorPicker = document.querySelector("#color");
     
+    
+
     getColor("black");
 
     getColorBlack.addEventListener("click", () => {
         getColor("black");
-        
+        isRainbow = false;
     })
     
     getColorWhite.addEventListener("click", () => {
         getColor("white");
-
+        isRainbow = false;
     })
 
     getColorRainbow.addEventListener("click", () => {
+        isRainbow = true;
         getColor(getRandomColor());
     })
+
+    getColorPicker.oninput = function() {
+        const value = this.value;
+        getColor(value.toString());
+        isRainbow = false;
+    }
 }
 
 const slider = document.querySelector("#myRange");
@@ -59,10 +70,10 @@ function getColor(color) {
                 square.style.opacity = opacity;
                 opacity += 0.1;
 
-                if (color === "black" || color === "white") {
-                    square.style.backgroundColor = color;
-                } else {
+                if (isRainbow === true) {
                     square.style.backgroundColor = getRandomColor();
+                } else {
+                    square.style.backgroundColor = color;
                 }
             }
         })
@@ -74,10 +85,10 @@ function getColor(color) {
             square.style.opacity = opacity;
             opacity += 0.1;
             
-            if (color === "black" || color === "white") {
-                square.style.backgroundColor = color;
-            } else {
+            if (isRainbow === true) {
                 square.style.backgroundColor = getRandomColor();
+            } else {
+                square.style.backgroundColor = color;
             }
         })
     })
